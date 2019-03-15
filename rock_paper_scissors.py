@@ -1,6 +1,6 @@
 import random
 
-username = input('What is your name? ')
+# username = input('What is your name? ')
 # Get user's name
 
 player_wins = 0
@@ -42,7 +42,7 @@ for i in range(rounds):
     # Get input from the human.
     if human_play.lower() not in potential_answers:
         # Making sure input is valid
-        print('That\s not valid. Game invalidated.')
+        print('That\'s not valid. Game invalidated.')
     elif [bot_play, human_play] in victory_states:
         # Checking to see if the bot beats the human
         print('The bot won the game.')
