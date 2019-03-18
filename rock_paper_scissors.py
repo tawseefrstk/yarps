@@ -43,17 +43,19 @@ for i in range(rounds):
     if human_play.lower() not in potential_answers:
         # Making sure input is valid
         print('That\'s not valid. Game invalidated.')
-    elif [bot_play, human_play] in victory_states:
+    elif [bot_play, human_play.lower()] in victory_states:
         # Checking to see if the bot beats the human
         print('The bot won the game.')
         bot_wins += 1
-    elif [human_play, bot_play] in victory_states:
+    elif [human_play.lower(), bot_play] in victory_states:
         # Checking to see if the human beat the bot
         print('You won.')
         player_wins += 1
-    else:
+    elif human_play.lower() == bot_play:
         print('It was a tie.')
         ties += 1
+    else:
+        print('Invalid state.')
 
 print('You played ' + str(rounds) + ' rounds.')
 print('You won ' + str(player_wins) + ' rounds.')
